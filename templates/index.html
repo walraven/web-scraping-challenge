@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p>Check out this information on Mars, the red planet.</p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+    </div>
+    <div class="container">
+        <div class="row">
+          <h2>Latest Mars News:</h2>
+                <h3>{{data.title}}</h3>
+                <p>{{data.blurb}}</p>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+              <h2>Latest Featured Image of Mars:</h2>
+              <img src="{{data.img_url}}" class="img-thumbnail" alt="Mars Featured Image" style="max-height: 800px">
+            </div>
+            <div class="col-md-3">
+                <h2>Mars Facts</h2>
+                {{data.table|safe}}
+                <h3>Latest Mars Weather:</h3>
+                <p>{{data.weather}}</p>
+            </div>
+        </div>
+        <div class ="container">
+          <div class ="row">
+            <h2 class="text-center">Martian Hemispheres</h2>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                  <h3 class="text-center">{{data.hemispheres[0].title}}</h3>
+                  <br>
+                  <a href="{{data.hemispheres[0].img_url}}"><img src="{{data.hemispheres[0].img_url}}" class="img-thumbnail" alt="{{data.hemispheres[0].title}}"></a>
+              </div>
+              <div class="col-md-6">
+                <h3 class="text-center">{{data.hemispheres[1].title}}</h3>
+                <br>
+                <a href="{{data.hemispheres[1].img_url}}"><img src="{{data.hemispheres[1].img_url}}" class="img-thumbnail" alt="{{data.hemispheres[1].title}}"></a>
+            </div>
+              <div class="col-md-6">
+                <h3 class="text-center">{{data.hemispheres[2].title}}</h3>
+                <br>
+                <a href="{{data.hemispheres[2].img_url}}"><img src="{{data.hemispheres[2].img_url}}" class="img-thumbnail" alt="{{data.hemispheres[2].title}}"></a>
+            </div>
+              <div class="col-md-6">
+                <h3 class="text-center">{{data.hemispheres[3].title}}</h3>
+                <br>
+                <a href="{{data.hemispheres[3].img_url}}"><img src="{{data.hemispheres[3].img_url}}" class="img-thumbnail" alt="{{data.hemispheres[3].title}}"></a>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+
+  </div>
+</body>
+
+</html>
+
+'hemispheres' : hemisphere_imgs
