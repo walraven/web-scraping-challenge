@@ -47,7 +47,6 @@ def scrape_mars(): #an unconventionally LONG function
         img_title = browser.title.split(' Enhanced')[0]
         browser.click_link_by_text('Sample') #hasn't been updated so \_(-_-)_/
         img_url = browser.windows[1].url
-        img_title
         for window in browser.windows:
             window.close()
         return {'title':img_title,'img_url':img_url}

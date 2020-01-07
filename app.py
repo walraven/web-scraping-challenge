@@ -9,7 +9,6 @@ conn = 'mongodb://localhost:27017'
 client = MongoClient(conn)
 db = client.mars_db
 
-
 @app.route('/')
 def index():
     mars_data = db.scrapes.find_one()
